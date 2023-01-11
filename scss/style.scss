@@ -1,0 +1,626 @@
+// 초기 리셋
+@charset 'utf-8';
+
+$tablet: 1179px;
+$mobile: 539px;
+
+@import "reset.scss";
+@import "sub_layout.scss";
+@import "biz_introduction.scss";
+@import "complex_info.scss";
+@import "environment.scss";
+@import "join.scss";
+@import "notice.scss";
+@import "sales_info.scss";
+
+.wrap::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+//header
+#header {
+	width: 100%;
+	border-bottom: 1px solid #ddd;
+	.inner {
+		width: 1180px;
+		height: 120px;
+		margin: 0 auto;
+		position: relative;
+		> h1 {
+			position: absolute;
+			left: 0px;
+			bottom: 15px;
+			> a {
+				font: bold 24px/1 "arial";
+				color: #444;
+			} //end of a
+		} //end of h1
+	} //end of inner
+
+	.menuWeb {
+		#gnb {
+			position: absolute;
+			right: 0px;
+			bottom: 0px;
+			li {
+				float: left;
+				a {
+					display: block;
+					padding: 14px 40px;
+					font: bold 15px/1 "arial";
+					color: #777;
+					&:hover {
+						background: #555;
+						color: #fff;
+					}
+				} //end of a
+			} //end of li
+		} //end of gnb
+		#util {
+			position: absolute;
+			top: 20px;
+			right: 40px;
+			li {
+				float: left;
+				margin-left: 20px;
+				a {
+					font: 12px/1 "arial";
+					color: #999;
+				}
+			} //end of li
+		} //end of util
+	} //end of menuWeb
+
+	// btnCall은 모르기 때문에 그대로 클론 코딩함.
+	.btnCall {
+		position: absolute;
+		right: 30px;
+		top: 50%;
+		transform: translateY(-50%);
+		display: none;
+		width: 20px;
+		height: 20px;
+		&::before {
+			content: "";
+			display: block;
+			width: 100%;
+			height: 2px;
+			background: #000;
+			position: absolute;
+			top: 0;
+			left: 0;
+			transition: top 0.5s 0s, transform 0.5s 0.5s;
+		}
+		&::after {
+			content: "";
+			display: block;
+			width: 100%;
+			height: 2px;
+			background: #000;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			transition: bottom 0.5s 0s, transform 0.5s 0.5s;
+		}
+		span {
+			display: block;
+			width: 100%;
+			height: 2px;
+			background: #000;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			margin-top: -1px;
+			transition: 1s;
+			text-indent: -9999px;
+		}
+		&.on {
+			&::before {
+				top: 50%;
+				margin-top: -1px;
+				transform: rotate(45deg);
+			}
+			&::after {
+				bottom: 50%;
+				margin-bottom: -1px;
+				transform: rotate(-45deg);
+			}
+			span {
+				transform: translateX(100%);
+				opacity: 0;
+			}
+		}
+	} //end of btnCall
+
+	.menuMo {
+		width: 270px;
+		height: 100vh;
+		background: blue; //#333으로 색상 바꾸기
+		position: fixed;
+		top: 0;
+		left: -270px;
+		padding: 35px 30px;
+		z-index: 10;
+		transition: 0.5s;
+		&.on {
+			left: 0px;
+		}
+		h1 {
+			padding-bottom: 30px;
+			border-bottom: 1px solid #666;
+			a {
+				display: block;
+				font: bold 24px/1 "arial";
+				color: #fff;
+				text-align: center;
+				span {
+					font-size: 12px;
+					color: #aaa;
+				}
+			} //end of a
+		} //end of h1
+		#gnbMo {
+			li {
+				a {
+					display: block;
+					width: 100%;
+					padding: 20px 0;
+					border-bottom: 1px solid aqua; //#444로 색상 바꾸기
+					font: bold 14px/1 "arial";
+					color: #888;
+					text-align: center;
+				} //end of a
+			} //end of li
+		} //end of gnbMo
+	} //end of menuMo
+} //end of header
+
+//visual
+#visual {
+	width: 100%;
+	//header의 120px + borderbotttom 1px을 뺀다
+	height: calc(100vh - 121px);
+	overflow: hidden;
+	//영상을 어둡게
+	background: #000;
+
+	video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		opacity: 0.7;
+	}
+	.inner {
+		width: 1180px;
+		margin: 0 auto;
+		position: absolute;
+		top: 40%;
+		left: 19%;
+		//transform: translate(-50%, -50%);
+
+		h1 {
+			font: normal 20px/1 "arial";
+			color: #fff;
+			margin-bottom: 20px;
+		} //end of h1
+
+		p {
+			font: 30px/1.4 "arial";
+			color: #fff;
+			margin-bottom: 10px;
+		} //end of p
+
+		h2 {
+			font: normal 15px/1 "arial";
+			color: #fff;
+			margin-bottom: 20px;
+		}
+
+		a {
+			display: block;
+			width: 100px;
+			height: 40px;
+			border: 1px solid #bbb;
+			font: bold 13px/30px "arial";
+			color: #fff;
+			line-height: 40px;
+			text-align: center;
+			&:hover {
+				background: #fff;
+				color: #555;
+			}
+		} //end of a
+	} //end of inner
+} //end of visual
+
+//advantage
+#advantage {
+	width: 100%;
+	padding: 100px 0;
+	// background: #eee;
+
+	.inner {
+		width: 1180px;
+		margin: 0 auto;
+		background: white;
+		position: relative; //기준
+		article {
+			&:nth-of-type(1) {
+				width: 580px;
+				height: 620px;
+				// background: #fff;
+				float: left;
+				margin-right: 10px;
+				padding: 20px 20px 0;
+				overflow: hidden;
+
+				h1 {
+					//h1의 글자도 1개씩 쪼개서 색상을 달리하는 방법은 없을까?
+					//SHING TOWER에서 S,T를 예제처럼 주황색으로 하고 싶음
+					font: bold 15px/1 "arial";
+					color: #555;
+					padding: 10px 10px 0;
+					text-align: right;
+					margin-bottom: 20px;
+				} //end of h1
+
+				p {
+					font: 25px/1.4 "arial";
+					color: #555;
+					margin-bottom: 20px;
+					text-align: right;
+				} //end of p
+				img {
+					width: 80%;
+					height: 80%;
+					object-fit: cover;
+					float: right;
+				} //emd pf img
+			} //end nth-of-type(1)
+			&:nth-of-type(2) {
+				width: 580px;
+				height: 620px;
+				float: left;
+				margin-right: 10px;
+				padding: 20px 20px 0;
+				.box1 {
+					width: 100%;
+					height: 30%;
+					// background: blue;
+					margin-top: 10px;
+					margin-bottom: 10px;
+
+					> p {
+						font: 15px/1.4 "arial";
+						color: #444;
+						margin-top: 10px;
+						margin-bottom: 20px;
+						text-align: left;
+					} //end of p
+					> a {
+						display: block;
+						width: 100px;
+						height: 40px;
+						border: 1px solid #bbb;
+						background-color: #555;
+						font: bold 13px/30px "arial";
+						color: #fff;
+						line-height: 40px;
+						text-align: center;
+						&:hover {
+							background: #fff;
+							color: #555;
+						}
+					} //end of a
+				}
+
+				//여기는 해결이 안됨 - 복습이 안된 상태임. 일단 패스
+				.box2 {
+					width: 100%;
+					height: 60%;
+					background: #eee;
+					text-align: center;
+					position: relative;
+					ul {
+						width: 100%;
+						background: yellowgreen;
+						li {
+							width: 45%;
+							line-height: 80px;
+							border: 1px solid #111;
+							padding: 15px 20px;
+							margin-bottom: 20px;
+							&::after {
+								content: "";
+								display: block;
+								clear: both;
+							}
+							> i {
+								font-size: 50px;
+								color: #555;
+								float: left;
+							}
+							> span {
+								// display: table-cell;
+								// padding-left: 10px;
+								// text-align: left;
+								// vertical-align: middle;
+								font: 20px/1.4 "arial";
+								columns: #555;
+								background-color: red;
+								float: right;
+								// padding: 20px 0;
+							}
+							&:nth-of-type(1) {
+								float: left;
+							}
+							&:nth-of-type(2) {
+								float: right;
+							}
+							&:nth-of-type(3) {
+								float: left;
+							}
+							&:nth-of-type(4) {
+								float: right;
+							}
+						} //end of li
+					} //end of ul
+				} //end of box2
+			} //end of nth-of-type(2)
+		} //end of article
+
+		// 이것을 지우면 future_apt와의 공간이 구분이 안된다
+		&::after {
+			content: "";
+			display: block;
+			clear: both;
+		} //end of after
+	} //end of inner
+} //end of advantage
+
+#future_apt {
+	width: 100%;
+	padding: 200px 0;
+	background: #eee;
+	.inner {
+		width: 1180px;
+		margin: 0 auto;
+		position: relative;
+
+		h1 {
+			font: bold 20px/1 "arial";
+			color: #555;
+			text-align: center;
+			margin-bottom: 20px;
+		} //end of h1
+		p {
+			font: 25px/1.4 "맑은 고딕";
+			color: #555;
+			margin-bottom: 30px;
+			text-align: center;
+		} //end of p
+
+		.wrap {
+			width: 100%;
+
+			article {
+				width: 580px;
+				height: 300px;
+
+				.pic {
+					width: 100%;
+					height: 200px;
+					overflow: hidden;
+					img {
+						object-fit: cover;
+						transition: 0.5s;
+					} //end of img
+
+					&:hover {
+						img {
+							transform: scale(1.2);
+						}
+					} //end of hover
+					// &::after {
+					// 	content: "";
+					// 	display: block;
+					// 	clear: both;
+					// }
+				} //end of pic
+
+				a {
+					display: inline-block;
+					text-align: center;
+					margin-top: 5px;
+					width: 80px;
+					height: 30px;
+					border: 1px solid #bbb;
+					background-color: #555;
+					font: bold 10px/30px "arial";
+					color: #fff;
+					display: inline-block;
+					&:hover {
+						background: #fff;
+						color: #555;
+					}
+					&::after {
+						content: "";
+						display: block;
+						clear: both;
+					}
+				}
+
+				&:nth-of-type(1) {
+					float: left;
+					margin-right: 20px;
+				}
+
+				&:nth-of-type(2) {
+					float: right;
+				}
+
+				&:nth-of-type(3) {
+					float: left;
+					margin-right: 20px;
+				}
+
+				&:nth-of-type(4) {
+					float: right;
+				}
+			} //end of article
+		} //end of wrap
+	} //end of inner
+} //end of future
+
+//footer
+#footer {
+	width: 100%;
+	padding: 100px 0;
+	background: #444;
+	.inner {
+		width: 1180px;
+		margin: 0 auto;
+		// 아직도 after는 모르겠음
+		&::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		h1 {
+			font: bold 24px/1 "arial";
+			color: #fff;
+			padding-top: 5px;
+			float: left;
+		} //end of h1
+		.detail_address {
+			float: left;
+			margin-left: 70px;
+			address {
+				font: 14px/1.7 "arial";
+				color: #eee;
+				margin-bottom: 20px;
+				// margin-top: 20px;
+				// padding-top: 20px;
+				// border-top: 1px solid #888;
+			}
+			p {
+				font: 12px/1 "arial";
+				color: #eee;
+			}
+		} //end of address
+
+		.service {
+			// margin-left: 70px;
+			float: right;
+			p {
+				&:nth-of-type(1) {
+					font: bold 20px/1 "arial";
+					color: orange;
+					margin-bottom: 15px;
+					// display: inline-block;
+				}
+				&:nth-of-type(2) {
+					font: bold 25px/1 "Roboto";
+					letter-spacing: 7px;
+					color: #fff;
+				}
+			}
+		} //end of service
+	} //end of inner
+} //end of footer
+
+// 미디어쿼리
+//table - web 코딩을 펴두고, 고칠부분만 코딩한다
+@media screen and (max-width: $tablet) {
+	#header {
+		.inner {
+			width: 100%;
+			height: 100px;
+			> h1 {
+				left: 20px;
+			}
+			//웹버전 코드는 보이지 않게 한다
+			// a tag는 할것이 없으므로 넘어간다, 공란으로 남기면 안된다
+			.menuWeb {
+				display: none;
+			}
+			.btnCall {
+				display: block;
+			}
+			.menuMo {
+				display: block;
+			}
+		} //end of inner
+	}
+
+	#visual {
+		height: calc(100vh - 101px); //header의 height가 100px
+		background: url(../img/visual1.jpg) no-repeat
+			center/cover;
+		video {
+			display: none;
+		}
+		.inner {
+			width: 100%;
+			padding: 0px 30px;
+			//나머지는 web visual과 동일하다.
+		}
+	}
+
+	//여기는 웹부분을 해결을 못하였기 때문에 미완일수 밖에 없음
+	#advantage {
+		padding: 50px 30px; //위의 innder와 같이 30px은 맞춘것
+		.inner {
+			width: 100%;
+			.inner {
+				width: 49%;
+				margin-right: 2%;
+			}
+		}
+	}
+
+	#future_apt {
+		padding: 50px 30px;
+		.inner {
+			width: 100%;
+			margin-right: 2%;
+			.wrap {
+				article {
+					a {
+						font: bold 10px/20px "arial";
+						line-height: 30px;
+					}
+					&:nth-of-type(1) {
+						float: left;
+						width: 49%;
+						margin-right: 2px;
+					}
+					&:nth-of-type(2) {
+						float: right;
+						width: 49%;
+					}
+
+					&:nth-of-type(3) {
+						float: left;
+						width: 49%;
+						margin-right: 2px;
+					}
+
+					&:nth-of-type(4) {
+						float: right;
+						width: 49%;
+					}
+				}
+			}
+		}
+	}
+
+	// #footer_sub {
+	// }
+}
+
+//mobile
+@media screen and (max-width: $mobile) {
+}

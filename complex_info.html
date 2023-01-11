@@ -1,0 +1,107 @@
+<!-- 단지정보_카카오맵 -->
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>단지정보</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://kit.fontawesome.com/853a9be9ed.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2a703a1d1d4966263b4dc2278318c20d"></script>
+  <script defer src="js/location.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/main.js"></script>
+  <script defer src="js/complex_info.js"></script>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2a703a1d1d4966263b4dc2278318c20d">
+  </script>
+</head>
+
+<body>
+  <header id="header_sub">
+    <div class="inner">
+      <h1><a href="index.html">샤이닝분양</a></h1>
+
+      <nav class="menuWeb">
+        <ul id="gnb">
+          <li><a href="biz_introduction.html">사업소개</a></li>
+          <li><a href="environment.html">입지환경</a></li>
+          <li><a href="complex_info.html">단지정보</a></li>
+          <li><a href="sales_info.html">분양정보</a></li>
+          <li><a href="notice.html">공지사항</a></li>
+        </ul>
+        <ul id="util">
+          <li><a href="#">contact</a></li>
+          <li><a href="#">help</a></li>
+          <li><a href="#">login</a></li>
+          <li><a href="join.html">join</a></li>
+          <li><a href="#">sitemap</a></li>
+        </ul>
+      </nav>
+
+      <a href="#" class="btnCall">
+        <span>메뉴호출</span>
+      </a>
+
+      <!-- 모바일 사이즈 조정시 사용 -->
+      <nav class="menuMo">
+        <h1>
+          <a href="#">샤이닝분양</a>
+          <span>SHINING PARCEL OUT</span>
+        </h1>
+
+        <ul id="gnbMo">
+          <li><a href="biz_introduction.html">사업소개</a></li>
+          <li><a href="environment.html">입지환경</a></li>
+          <li><a href="complex_info.html">단지정보</a></li>
+          <li><a href="sales_info.html">분양정보</a></li>
+          <li><a href="notice.html">공지사항</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="content complex_info">
+    <div class="sub_visual"></div>
+    <div class="inner">
+      <h1>단지정보_카카오맵</h1>
+      <div id="map"></div>
+
+      <ul class="traffic">
+        <li><a href="#">교통정보 보기</a></li>
+        <li class="on"><a href="#">교통정보 끄기</a></li>
+      </ul>
+
+      <ul class="branch">
+        <li class="on" data-index="0"><a href="#">1단지</a></li>
+        <li data-index="1"><a href="#">2단지</a></li>
+        <li data-index="2"><a href="#">3단지</a></li>
+      </ul>
+    </div>
+    </div>
+  </section>
+
+  <footer id="footer_sub">
+    <div class="inner">
+      <h1>샤이닝분양</h1>
+      <div class="detail_address">
+        <address>
+          주소: 경기도 부천시 원미구 중동 1152 상록센트럴타워 303호 샤이닝분양 <br>
+          개인정보관리 책임자 : 대표 김철수<br>
+          Tel : 031-123-4567 | Fax : 031-123-4568
+        </address>
+        <p>COPYRIGHT©2022 SHINING PARCEL OUT. ALL RIGHTS RESERVED.</p>
+      </div>
+      <div class="service">
+        <p>고객센터</p>
+        <p>1544-0777</p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
